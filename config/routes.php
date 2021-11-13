@@ -13,6 +13,10 @@ $routes = [
         'controller' => 'helloWorld',
         'action' => 'world'
     ],
+    '/count-comission-payments' => [
+        'controller' => 'countComission',
+        'action' => 'countComission'
+    ]
 ];
 
 

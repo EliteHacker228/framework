@@ -1,16 +1,20 @@
 <?php
 
-class IndexController
+class CountComissionController
 {
     /**
      * Action name
      * @var string
      */
-    public $name = 'index';
+    public $name = 'count-comission';
 
-    public function indexAction()
-    {
-        return new Response($this->render('index-template', []));
+    /**
+     * Hello Action
+     * @return Response
+     */
+    public function countComissionAction() {
+
+        return new Response($this->render('count-comission-page-template', []));
     }
 
     protected function render($templateName, $vars = [])
@@ -28,6 +32,4 @@ class IndexController
         return new Response('Sorry but this action not found',
             '404', 'Not found');
     }
-
-
 }

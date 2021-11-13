@@ -1,6 +1,7 @@
 <?php
 require_once 'controllers/IndexController.php';
 require_once 'controllers/HelloWorldController.php';
+require_once 'controllers/CountComissionController.php';
 
 require_once 'core/Request.php';
 require_once 'core/Response.php';
