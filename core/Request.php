@@ -36,7 +36,6 @@ class Request
      */
     protected $path = '/';
 
-
     /**
      * Create request object from Get and Post arrays
      * @param array $get
@@ -51,9 +50,6 @@ class Request
         $this->method = $server['REQUEST_METHOD'];
         $this->path = $server['PATH_INFO'];
     }
-
-
-
 
     /**
      * Create Request from global vars _GET _POST
@@ -95,4 +91,13 @@ class Request
         return $this->path;
     }
 
+    /**
+     * Return get parameter by name
+     * @param $name
+     * @return mixed|null
+     */
+    public function getQueryParameter($name)
+    {
+        return isset($this->originalGet[$name]) ? $this->originalGet[$name] : null;
+    }
 }

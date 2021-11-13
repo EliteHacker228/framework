@@ -35,7 +35,7 @@ class IndexController
 
     public function showAction(Request $request)
     {
-        $id = $request->getQueryParameter("id");
+        $id = (int)$request->getQueryParameter("id");
 
         $article = is_int($id) ? $this->articleRepository->getById($id) : null;
 
