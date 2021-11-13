@@ -34,15 +34,16 @@ try {
 $controllers = [
     'index' => new IndexController($articleRepository),
     'helloWorld' => new HelloWorldController(),
+    'countComission' => new CountComissionController(),
 ];
 
 $controllerClassName = sprintf('%sController',
     ucfirst($route['controller']));
-//$controller = $controllers[$route['controller']];
+$controller = $controllers[$route['controller']];
 
 $actionMethod = $route['action'] . 'Action';
-$controller = new $controllerClassName();
+//$controller = new $controllerClassName();
 
 /** @var Response $response */
-$response = $controller->$actionMethod();
+$response = $controller->$actionMethod($request);
 $response->send();
